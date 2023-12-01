@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CP QUESTION</title>
+    <link rel="stylesheet" href="css/styles2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1.eng {
+            font-size: 28px;
+            text-align: center;
+            margin: 0 0 20px;
+            padding: 20px 0;
+        }
+
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 70%;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #444;
+        }
+
+        .left {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        p {
+            margin: 0;
+            color: #666;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="eng">CP QUESTIONS</h1>
+        <form class="search" action="/" method="post">
+            <input type="text" name="qst" class="box" placeholder="Enter a problem or tag...">
+            <button type="submit" class="btn-primary" name="button">Search</button>
+        </form>
+
+        <div class="left">
+            <% for(var i=0; i<qsts.length; i++){ %>
+                <h2><%= content[i] %></h2>
+                <a href="<%= link[i] %>"><%= link[i] %></a>
+                <p>ID: <%= qsts[i] %></p>
+                <p>Tags: <%= tag[i] %></p>
+                <hr>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
